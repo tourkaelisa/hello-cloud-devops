@@ -10,8 +10,12 @@ Azure Storage Account is a service that provides a unique namespace in Azure for
 2. Use the same resource group as before.
 3. Choose a unique name (e.g., `stclouddevopslab<yourname>`). Be sure it is not exceeding 24 characters and contains only lowercase letters or numbers.
 4. Select the **Region** where your app service is located (e.g., `West Europe`).
-5. [Optional] Explore the rest of the options and leave them as default. 
-6. Click **Review + Create** and then **Create**.
+5. Set **Primary service** to `Azure Blob Storage or Azure Data Lake Storage Gen 2`.
+6. Select the **Redundancy** as `Locally redundant storage (LRS)`.
+   - This is the most cost-effective option for development and testing purposes.
+   - For production, you may want to consider other redundancy options based on your needs.
+7. [Optional] Explore the rest of the options and leave them as default. 
+8. Click **Review + Create** and then **Create**.
 
     > ⌛ Wait for the deployment to complete. This may take a few minutes.
     > [Optionally] Learn more about [Azure Storage](https://learn.microsoft.com/en-us/azure/storage/common/storage-introduction).
@@ -20,11 +24,13 @@ Azure Storage Account is a service that provides a unique namespace in Azure for
 
 A Blob Container is a logical grouping of blobs (files) in Azure Storage. You can think of it as a folder in a file system.
 
-1. In the storage account, go to **Containers** from the left menu.
-2. Click **+ Container** to create a new container.
-3. Name it `hello-cloud-devops-app-contents` (or any name you prefer).
-4. Set public access level to **Blob (anonymous read access for blobs only)**.
-5. Upload any static files you want to serve (e.g., images, PDFs, etc.).
+1. In the storage account, go to **Configuration** from the left menu.
+2. Enable **Allow Blob anonymous access** and click **Save**.
+3. From the left menu, go to **Containers**.
+4. Click **➕ Container** to create a new container.
+5. Name it `hello-cloud-devops-app-contents` (or any name you prefer).
+6. Set public access level to **Blob (anonymous read access for blobs only)**.
+7. Upload any static files you want to serve (e.g., images, PDFs, etc.).
 
 ## ✅ Step 3: Modify Flask App to Use Blob URLs
 
