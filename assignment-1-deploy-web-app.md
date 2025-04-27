@@ -24,15 +24,24 @@ An Azure App Service is a fully managed platform (PaaS) for building, deploying,
     > ⌛ Wait for the deployment to complete. This may take a few minutes.
     > [Optionally] Learn more about [Azure App Service](https://learn.microsoft.com/en-us/azure/app-service/overview).
 
+5. After the deployment is complete, go to the **Overview** tab of your App Service and click on the **Default domain** link to open your web app in a new tab. You should see a default Azure App Service page.
+6. In the Azure portal, navigate to your App Service and click on **Environment variables** in the left menu.
+7. Add the following environment variables:
+   - `SCM_DO_BUILD_DURING_DEPLOYMENT` with value `true` (this will ensure that the app is built during deployment).
+   - Click on **Apply** to save the changes.
+
 ## ✅ Step 2: Configure GitHub Actions for Deployment
 
 GitHub Actions is a CI/CD tool that allows you to automate your software development workflows. In this case, we'll use it to deploy our web app to Azure.
 
 1. Go to your forked repository on GitHub.
-2. Click on the **Actions** tab.
-3. Replace the `AZURE_WEBAPP_NAME` and `PYTHON_VERSION` variables in the workflow file with your app name and Python version (e.g., `3.13`).
-4. Click on **Commit changes...** to save the workflow file.
-5. Get your Azure **Publish Profile**:
+2. Click on the **Actions** tab and then click on **New workflow**.
+3. Search for **Deploy a Python app to an Azure Web App** and select **Configure**.
+   - This will create a new workflow file in the `.github/workflows` directory of your repository.
+   - The workflow file is named `azure-webapps-python.yml` and contains the necessary steps to deploy your app to Azure.
+4. Replace the `AZURE_WEBAPP_NAME` and `PYTHON_VERSION` variables in the workflow file with your app name and Python version (e.g., `3.13`).
+5. Click on **Commit changes...** to save the workflow file.
+6. Get your Azure **Publish Profile**:
    - In the Azure portal, go to your App Service.
    - Click on **Deployment Center** in the left menu.
    - Select **GitHub** as the source and **Authorize** Azure to access your GitHub account.
@@ -41,7 +50,7 @@ GitHub Actions is a CI/CD tool that allows you to automate your software develop
    - Click on **Save**.
    - Go to **Configuration** and enable **SCM Basic Auth Publishing Credentials**.
    - Azure will generate a **Publish Profile** for you. Go to the **Overview** tab and click on **Get publish profile**. This will download a `.publishsettings` file.
-6. In your GitHub repository:
+7. In your GitHub repository:
    - Go to **Settings** > **Secrets and variables** > **Actions**.
    - Click on **New repository secret**.
    - Name it `AZURE_WEBAPP_PUBLISH_PROFILE` and paste the content of the `.publishsettings` file you downloaded from Azure.
