@@ -158,3 +158,11 @@ Once the deployment is complete, navigate to your web app and check if the list 
 Congratulations! You have successfully integrated Azure SQL Database into your web app. Now you can store and retrieve data dynamically. 🏆🏆
 
 🏠 **Homework**: Try adding a form to insert new products from the web app!
+
+## ⚠️ Important: Clean Up Resources
+
+After completing the assignments, remember to clean up your Azure resources to avoid unnecessary charges upon your free credits. You can delete the resource group you created for this assignment, which will remove all resources within it.
+
+1. In the Azure portal, navigate to **Resource groups**.
+2. Select the resource group you created for this assignment (e.g., `rg-hello-cloud-devops`).
+3. Click on **Delete resource group**.
