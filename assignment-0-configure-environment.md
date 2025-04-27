@@ -52,4 +52,6 @@ git clone https://github.com/<your-username>/hello-cloud-devops.git
 cd hello-cloud-devops
 ```
 
+Congratulations! You have successfully set up your environment for this workshop. 🏆🏆
+
 You’re now ready to proceed to [Assignment 1: Deploy Web App to Azure](assignment-1-deploy-web-app.md) 🎯

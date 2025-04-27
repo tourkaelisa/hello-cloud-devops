@@ -62,3 +62,5 @@ Update your HTML templates to reference files from the Azure Blob Storage.
 7. Navigate to your web app URL to see the changes in action.
 
 Congratulations! You've successfully integrated Azure Blob Storage into your web app. Now you can serve static files directly from Azure Storage. 🏆🏆
+
+You’re now ready to proceed to [Assignment 3: Use Azure SQL Database in Your Web App](assignment-3-use-azure-sql-database.md) 🎯

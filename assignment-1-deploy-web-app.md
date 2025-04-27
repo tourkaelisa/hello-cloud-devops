@@ -66,4 +66,6 @@ After pushing changes to the `main` branch, GitHub Actions will automatically de
 Open your Azure App Service URL in a web browser to see your deployed app.
 You can find the URL in the **Overview** tab of your App Service.
 
+Congratulations! You have successfully deployed a Python web app to Azure using GitHub Actions! 🎉🎉
+
 You’re now ready to proceed to [Assignment 2: Use Azure Storage in Your Web App](assignment-2-use-azure-storage.md) 🎯
